@@ -1,6 +1,7 @@
 
 
 import java.io.Console;
+import java.util.Scanner;
 
 /**
      * Assignment 1 - Guessing Game
@@ -37,7 +38,6 @@ public class Guesser{
          * rules() method, next the doGuesses() method.
          */
         public void start(){
-            Guesser guesser = new Guesser(1,100);
             rules();
             doGuesses();
             // call the rules method here
@@ -62,16 +62,17 @@ public class Guesser{
          * a valid reply. Return the String that you read from
          * the player.
          */
+        Scanner sc = new Scanner(System.in);
         private String getReply(){
 
             // Write code here which reads a String from the console.
             // As long as it is not a valid reply (one of "T" and "F")
             // write an error message, and read a new reply.
             // When you have gotten a valid reply, return it.
-            String reply = System.console().readLine();
-            while(!reply.equals("T") || !reply.equals("F")){
+            String reply = sc.nextLine();
+            while(!reply.equals("T") && !reply.equals("F")){
                 System.out.println("Please answere with T or F");
-                reply = System.console().readLine();
+                reply = sc.nextLine();
             }
             return reply;
         }

@@ -114,5 +114,9 @@ public class Guesser{
                     " guesses)");
         }
 
+    public String toString(){
+        return "low: " + low + " high: " + high;
+    }
+
 }
 
